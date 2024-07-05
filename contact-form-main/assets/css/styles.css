@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/static/Karla-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Karla 2';
+    src: url('../fonts/static/Karla-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3f1e6;
+    font-family: 'Karla', Arial, sans-serif;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Ensure there's no margin around the body */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px; /* Add padding to prevent content from touching the edges */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Maximum width for larger screens */
+    min-width: 250px; /* Minimum width to prevent it from becoming too small */
+    margin-top: 70px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-div h3 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.form-div .input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-div .input-group div {
+    flex: 1;
+}
+
+.form-div .input-group div input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.form-div .input-group div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-div .input-container {
+    margin-bottom: 15px;
+}
+
+.form-div .input-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-div .input-container input,
+.form-div .input-container textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+.form-div .radio-group {
+    display: flex;
+    
+    gap: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.radio-group div{
+    width: 100%;
+}
+
+.form-div .radio-group .radio-option {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+
+.form-div .radio-option input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 1; /* Visible inicialmente */
+}
+
+.form-div .radio-option span {
+    cursor: pointer;
+}
+
+
+
+/* Oculta el input de radio y muestra la imagen cuando está seleccionado */
+.input-radio:checked {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-radio:checked + img {
+    display: block; /* Muestra la imagen */
+}
+
+/* Oculta la imagen inicialmente */
+.radio-option img {
+    display: none;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.radio-option:focus-within {
+    background-color: #e3f1e6;
+    border-color: #0d7c68; /* Cambia el border-color al tener focus */
+}
+
+
+
+.form-div label {
+    
+    margin-top: 10px;
+    
+}
+
+.form-div textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.checkbox-div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Ensure elements stack vertically */
+    gap: 5px; /* Adjust spacing as needed */
+
+    
+  }
+  
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center; /* Align checkbox and label horizontally */
+    gap: 10px; /* Space between checkbox and label */
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    width: 15px; 
+    height:15px;
+    margin: 0; /* Remove any default margin */
+  }
+  
+  .checkbox-wrapper label {
+    margin: 0; /* Remove any default margin */
+  }
+
+  .checkbox-wrapper img {
+    display: none; /* Initially hide the image */
+    width: 15px;
+    height: 15px;
+  }
+
+  .input-checkbox:checked {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .input-checkbox:checked + img {
+    display: block; /* Show the image when the checkbox is checked */
+  }
+
+
+
+
+input[type="submit"]{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d7c68;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Karla 2';
+}
+
+.form-div .input-group div input:hover, 
+.form-div .input-container input:hover,
+.form-div .radio-group .radio-option:hover{
+    
+    border-color: #0d7c68;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    color: red; /* Error messages will be displayed in red */
+    font-size: 0.8em; /* Slightly smaller font size */
+    margin-top: 10px; /* Space between the input and the error message */
+
+}
+
+.custom-alert {
+    position: fixed; /* Stay in place */
+    top: 10px; /* Adjust the top position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 350px;
+    height: 80px;
+    background-color: #085345; /* Green background */
+    display: flex;
+    flex-direction: column;
+    
+    z-index: 1000; /* Make sure it appears in front */
+    border-radius: 10px;
+}
+
+  .custom-alert-header{
+    display: flex;
+    gap: 5px;
+    background-color: #085345; /* Green background */
+    border-radius: 10px;
+    margin: 20px 0px 0px 20px;
+  }
+  
+  .custom-alert img {
+    width: 15px; /* Adjust size as needed */
+    height: 15px;
+    
+  }
+  
+  .custom-alert span {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Karla 2';
+  }
+  
+  .custom-alert p {
+    font-size: 12px;
+    font-family: 'Karla';
+    color: white;
+    margin: 0px 0px 0px 20px;
+    border-radius: 5px;
+    
+    
+  }
+
+@media (max-width: 640px) {
+    body {
+        padding: 0 20px; /* Add padding to keep the green background visible on the sides */
+    }
+
+    
+    
+
+    .form-div {
+        max-width: 100%; /* Ensure form takes the available width but within the padded area */
+        padding: 20px; /* Ensure padding is consistent */
+        border-radius: 10px; /* Maintain border-radius for aesthetic */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+    }
+}
+
+@media (max-width: 376px) {
+    .form-div {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px; /* Maintain border-radius for aesthetic */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        height: 90vh; /* Adjust to take almost the full height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribute space evenly between and around items */
+        overflow: auto; /* Allow scrolling if content overflows */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+
+    .form-div h3 {
+        margin-top: 0; /* Remove margin-top to prevent pushing content out */
+    }
+
+    .form-div .input-group {
+        flex-direction: column;
+        gap: 10px; /* Add some gap between input elements */
+    }
+
+    .form-div .input-group div {
+        width: 100%;
+    }
+
+    .form-div .input-group div input,
+    .form-div .input-container input,
+    .form-div .input-container textarea {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 40px;
+        box-sizing: border-box; /* Ensure padding and border are included in height */
+    }
+
+    .form-div .radio-group {
+        flex-direction: column;
+        
+    }
+
+    .form-div .radio-group .radio-option {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 50px;
+        box-sizing: border-box; /* Ensure padding and border are included in height */
+    }
+
+    .form-div textarea {
+        height: 150px; /* Set a specific height */
+        padding-bottom: 10px; /* Adjust padding to prevent too much white space */
+        box-sizing: border-box; /* Ensure padding and border are included in height */
+    }
+
+    .form-div .checkbox-group {
+        margin-top: 20px; /* Add margin to create space between checkbox and previous elements */
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 20px; /* Add margin to create space between checkbox and submit button */
+    }
+}

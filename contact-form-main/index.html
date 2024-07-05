@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form class="form-div" id="form-id">
+        <h3>Contact Us</h3>
+        <div class="input-group">
+          <div>
+            <label for="first_name">First Name *</label>
+            <input id="first_name" type="text" />
+          </div>
+          <div>
+            <label for="last_name">Last Name *</label>
+            <input id="last_name" type="text" />
+          </div>
+        </div>
+        <div class="input-container">
+          <label for="email_address">Email Address *</label>
+          <input id="email_address" />
+        </div>
+
+        <span>Query Type *</span>
+        <div class="radio-group">
+          <div>
+            <label for="general-enquiry" class="radio-option">
+              <input
+                type="radio"
+                name="queryType"
+                value="generalEnquiry"
+                class="input-radio"
+                id="general-enquiry"
+              />
+              <img src="./assets/images/icon-radio-selected.svg" />
+
+              <span>General Enquiry</span>
+            </label>
+          </div>
+          <div>
+            <label for="support-request" class="radio-option">
+              <input
+                type="radio"
+                name="queryType"
+                value="supportRequest"
+                class="input-radio"
+                id="support-request"
+              /><img src="./assets/images/icon-radio-selected.svg" />
+
+              <span>Support Request</span>
+            </label>
+          </div>
+        </div>
+        <div class="messagge-container">
+          <label for="message_area">Message *</label>
+          <textarea id="message_area" rows="5"></textarea>
+        </div>
+        <div class="checkbox-div">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="checkbox" class="input-checkbox" />
+            <img src="./assets/images/icon-checkbox-check.svg" />
+            <label for="checkbox"
+              >I hereby consent to being contacted by the team *</label
+            >
+          </div>
+          <div class="error-message"></div>
+          <!-- Error message container for the checkbox -->
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/mattgo327#"
+          >Matias Garay</a
+        >.
+      </div>
+    </main>
+
+    <script src="./assets/js/scripts.js"></script>
+  </body>
+</html>
